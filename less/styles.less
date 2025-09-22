@@ -48,3 +48,99 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+// Header
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    .transition();
+
+    &.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: @shadow;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: @primary-color;
+            text-decoration: none;
+
+            span {
+                color: @secondary-color;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: @text-dark;
+                font-weight: 500;
+                .transition();
+                position: relative;
+
+                &:hover {
+                    color: @primary-color;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: @primary-color;
+                    .transition();
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, @primary-color 0%, @accent-color 100%);
+            color: @white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            .transition();
+            box-shadow: @shadow;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: @shadow-hover;
+            }
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+
+            span {
+                width: 25px;
+                height: 3px;
+                background: @text-dark;
+                margin: 3px 0;
+                .transition();
+            }
+        }
+    }
+}
