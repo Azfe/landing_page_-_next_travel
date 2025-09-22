@@ -244,3 +244,76 @@ header nav .mobile-menu-toggle span {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
 }
+.destinations {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+.destinations h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+.destinations .destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.destinations .destinations-grid .destination-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.destinations .destinations-grid .destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+}
+.destinations .destinations-grid .destination-card .card-image {
+  height: 200px;
+  background: linear-gradient(45deg, #2563eb, #10b981);
+  position: relative;
+  overflow: hidden;
+}
+.destinations .destinations-grid .destination-card .card-image::after {
+  content: '📍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+}
+.destinations .destinations-grid .destination-card .card-content {
+  padding: 1.5rem;
+}
+.destinations .destinations-grid .destination-card .card-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+.destinations .destinations-grid .destination-card .card-content p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.destinations .destinations-grid .destination-card .card-content .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.destinations .destinations-grid .destination-card .card-content .card-footer .price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f59e0b;
+}
+.destinations .destinations-grid .destination-card .card-content .card-footer .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #f59e0b;
+}

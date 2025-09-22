@@ -302,3 +302,90 @@ header {
         }
     }
 }
+
+// Destinations Section
+.destinations {
+    padding: 5rem 0;
+    background: @light-bg;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 3rem;
+        color: @text-dark;
+    }
+
+    .destinations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+
+        .destination-card {
+            background: @white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: @shadow;
+            .transition();
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: @shadow-hover;
+            }
+
+            .card-image {
+                height: 200px;
+                background: linear-gradient(45deg, @primary-color, @accent-color);
+                position: relative;
+                overflow: hidden;
+
+                &::after {
+                    content: '📍';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 3rem;
+                }
+            }
+
+            .card-content {
+                padding: 1.5rem;
+
+                h3 {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                    color: @text-dark;
+                }
+
+                p {
+                    color: @text-light;
+                    margin-bottom: 1rem;
+                    line-height: 1.5;
+                }
+
+                .card-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .price {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        color: @secondary-color;
+                    }
+
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.25rem;
+                        color: @secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
