@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Travel - Descubre el Mundo</title>
+    <meta name="description" content="Agencia de viajes online. Encuentra los mejores destinos, ofertas exclusivas y planifica tu próxima aventura con nosotros.">
+    
+    <!-- LESS CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.3/less.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">Travel<span>Explore</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="cta-button">Planificar Viaje</a>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Descubre el Mundo con Next Travel</h1>
+            <p>Vive experiencias únicas y crea recuerdos inolvidables. Tu próxima aventura está a un click de distancia.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('destinos')">Explorar Destinos</button>
+                <button class="btn-secondary" onclick="scrollToSection('contacto')">Planificar Viaje</button>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <form class="search-form" onsubmit="handleSearch(event)">
+                    <div class="form-group">
+                        <label for="destino">Destino</label>
+                        <input type="text" id="destino" name="destino" placeholder="¿A dónde quieres ir?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="salida">Fecha de Salida</label>
+                        <input type="date" id="salida" name="salida" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regreso">Fecha de Regreso</label>
+                        <input type="date" id="regreso" name="regreso">
+                    </div>
+                    <div class="form-group">
+                        <label for="personas">Personas</label>
+                        <select id="personas" name="personas">
+                            <option value="1">1 Persona</option>
+                            <option value="2">2 Personas</option>
+                            <option value="3">3 Personas</option>
+                            <option value="4">4 Personas</option>
+                            <option value="5+">5+ Personas</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-button">Buscar Viajes</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations fade-in" id="destinos">
+        <div class="container">
+            <h2>Destinos Populares</h2>
+            <div class="destinations-grid">
+                <div class="destination-card" onclick="showDestinationDetails('paris')">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>París, Francia</h3>
+                        <p>La ciudad del amor te espera con sus monumentos icónicos, museos de clase mundial y gastronomía exquisita.</p>
+                        <div class="card-footer">
+                            <span class="price">desde €899</span>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" onclick="showDestinationDetails('tokyo')">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>Tokio, Japón</h3>
+                        <p>Sumérgete en la perfecta mezcla entre tradición milenaria y tecnología futurista en la capital nipona.</p>
+                        <div class="card-footer">
+                            <span class="price">desde €1,299</span>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" onclick="showDestinationDetails('santorini')">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>Santorini, Grecia</h3>
+                        <p>Disfruta de las puestas de sol más hermosas del mundo en esta isla paradisíaca del mar Egeo.</p>
+                        <div class="card-footer">
+                            <span class="price">desde €799</span>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" onclick="showDestinationDetails('bali')">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Encuentra la paz interior entre templos sagrados, playas de ensueño y una cultura fascinante.</p>
+                        <div class="card-footer">
+                            <span class="price">desde €999</span>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" onclick="showDestinationDetails('newyork')">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>Nueva York, EUA</h3>
+                        <p>La ciudad que nunca duerme te ofrece Broadway, museos increíbles y la energía más vibrante del mundo.</p>
+                        <div class="card-footer">
+                            <span class="price">desde €1,199</span>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" onclick="showDestinationDetails('dubai')">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>Dubái, EAU</h3>
+                        <p>Vive el lujo en su máxima expresión en esta ciudad futurista llena de rascacielos y experiencias únicas.</p>
+                        <div class="card-footer">
+                            <span class="price">desde €1,099</span>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services fade-in" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✈️</div>
+                    <h3>Vuelos</h3>
+                    <p>Encuentra las mejores ofertas en vuelos nacionales e internacionales. Comparamos precios de múltiples aerolíneas para ofrecerte las mejores opciones.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Hoteles</h3>
+                    <p>Desde hoteles boutique hasta resorts de lujo, seleccionamos alojamientos que garantizan comodidad y experiencias memorables.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎒</div>
+                    <h3>Paquetes Completos</h3>
+                    <p>Viajes todo incluido diseñados especialmente para ti. Vuelo, hotel, traslados y actividades en un solo paquete con descuentos exclusivos.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🗺️</div>
+                    <h3>Tours Guiados</h3>
+                    <p>Descubre cada destino con guías expertos locales. Ofertas grupales e individuales con itinerarios personalizados.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Seguro de Viaje</h3>
+                    <p>Viaja con tranquilidad. Ofrecemos seguros completos que cubren cancelaciones, emergencias médicas y pérdida de equipaje.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo está disponible las 24 horas para resolver cualquier imprevisto durante tu viaje. Tu tranquilidad es nuestra prioridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in" id="testimonios">
+        <div class="container">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Next Travel hizo que nuestro viaje de luna de miel a París fuera absolutamente perfecto. Cada detalle estaba cuidadosamente planificado y el servicio al cliente fue excepcional."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MG</div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Madrid, España</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Increíble experiencia en Japón. Los guías locales eran muy conocedores y nos mostraron lugares que nunca habríamos encontrado por nuestra cuenta. ¡Definitivamente volveremos a reservar con ellos!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div class="author-info">
+                            <h4>Antonio Rodríguez</h4>
+                            <p>Barcelona, España</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"El mejor precio que encontramos para nuestro viaje familiar a Bali, y el servicio fue impecable. Los niños se divirtieron muchísimo y nosotros pudimos relajarnos completamente."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CS</div>
+                        <div class="author-info">
+                            <h4>Carmen Silva</h4>
+                            <p>Valencia, España</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contacto">
+        <div class="container">
+            <h2>Contacta con Nosotros</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Hablemos de tu próximo viaje</h3>
+                    <p>Nuestro equipo de expertos en viajes está listo para ayudarte a planificar la aventura perfecta. Contáctanos y convierte tus sueños de viaje en realidad.</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +34 900 123 456
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            info@nexttravel.es
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Oficina</strong><br>
+                            Carrer Major, 123<br>
+                            08174 Sant Cugat del Vallès, Barcelona
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <strong>Horario</strong><br>
+                            Lun - Vie: 9:00 - 20:00<br>
+                            Sáb - Dom: 10:00 - 18:00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form class="form-grid" onsubmit="handleContact(event)">
+                        <div class="form-row">
+                            <input type="text" placeholder="Nombre" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Teléfono">
+                            <select required>
+                                <option value="">Tipo de viaje</option>
+                                <option value="familia">Viaje en familia</option>
+                                <option value="pareja">Viaje en pareja</option>
+                                <option value="amigos">Viaje con amigos</option>
+                                <option value="solo">Viaje solo</option>
+                                <option value="trabajo">Viaje de trabajo</option>
+                            </select>
+                        </div>
+                        <input type="text" placeholder="Destino de interés">
+                        <textarea placeholder="Cuéntanos más sobre tu viaje ideal..." required></textarea>
+                        <button type="submit" class="submit-button">Enviar Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Next Travel</h3>
+                    <p>Tu agencia de viajes de confianza. Más de 10 años creando experiencias inolvidables alrededor del mundo.</p>
+                    <div class="social-links">
+                        <a href="#" onclick="openSocial('facebook')">f</a>
+                        <a href="#" onclick="openSocial('instagram')">📷</a>
+                        <a href="#" onclick="openSocial('twitter')">🐦</a>
+                        <a href="#" onclick="openSocial('youtube')">📺</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Destinos Populares</h3>
+                    <ul>
+                        <li><a href="#">Europa</a></li>
+                        <li><a href="#">Asia</a></li>
+                        <li><a href="#">América</a></li>
+                        <li><a href="#">África</a></li>
+                        <li><a href="#">Oceanía</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Vuelos</a></li>
+                        <li><a href="#">Hoteles</a></li>
+                        <li><a href="#">Paquetes</a></li>
+                        <li><a href="#">Tours</a></li>
+                        <li><a href="#">Seguros</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Cancelaciones</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NextTravel. Todos los derechos reservados. | Licencia de Agencia de Viajes: BAL-123456</p>
+            </div>
+        </div>
+    </footer>
+</html>
