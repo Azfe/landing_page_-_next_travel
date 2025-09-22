@@ -186,3 +186,61 @@ header nav .mobile-menu-toggle span {
   font-size: 2rem;
   opacity: 0.7;
 }
+.search-section {
+  background: #ffffff;
+  padding: 4rem 0;
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+}
+.search-section .search-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.search-section .search-container .search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+.search-section .search-container .search-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.search-section .search-container .search-form .form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+.search-section .search-container .search-form .form-group input,
+.search-section .search-container .search-form .form-group select {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.search-section .search-container .search-form .form-group input:focus,
+.search-section .search-container .search-form .form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+.search-section .search-container .search-form .search-button {
+  background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+.search-section .search-container .search-form .search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+}
