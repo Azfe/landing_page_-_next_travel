@@ -144,3 +144,94 @@ header {
         }
     }
 }
+
+// Hero Section
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232563eb" width="1200" height="600"/><circle fill="%2310b981" cx="200" cy="150" r="80" opacity="0.6"/><circle fill="%23f59e0b" cx="800" cy="100" r="60" opacity="0.5"/><circle fill="%23ef4444" cx="1000" cy="400" r="100" opacity="0.4"/><polygon fill="%23ffffff" points="0,600 400,400 800,500 1200,300 1200,600" opacity="0.1"/></svg>') center/cover;
+    .flex-center;
+    text-align: center;
+    color: @white;
+    position: relative;
+
+    .hero-content {
+        max-width: 800px;
+        z-index: 2;
+        animation: fadeInUp 1s ease-out;
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, @white 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .btn-primary {
+                background: linear-gradient(135deg, @secondary-color 0%, #f97316 100%);
+                color: @white;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                .transition();
+                box-shadow: @shadow;
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: @shadow-hover;
+                }
+            }
+
+            .btn-secondary {
+                background: rgba(255, 255, 255, 0.1);
+                color: @white;
+                padding: 1rem 2rem;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                .transition();
+                backdrop-filter: blur(10px);
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    transform: translateY(-3px);
+                }
+            }
+        }
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+
+        &::after {
+            content: '↓';
+            color: @white;
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+    }
+}
