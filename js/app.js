@@ -47,3 +47,29 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById('salida').addEventListener('change', function () {
     document.getElementById('regreso').setAttribute('min', this.value);
 });
+
+// Search form handler
+function handleSearch(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const searchData = {
+        destino: formData.get('destino'),
+        salida: formData.get('salida'),
+        regreso: formData.get('regreso'),
+        personas: formData.get('personas')
+    };
+
+    // Show loading state
+    const button = event.target.querySelector('.search-button');
+    const originalText = button.textContent;
+    button.textContent = 'Buscando...';
+    button.disabled = true;
+
+    // Simulate search (replace with actual API call)
+    setTimeout(() => {
+        alert(`Búsqueda realizada para:\nDestino: ${searchData.destino}\nSalida: ${searchData.salida}\nRegreso: ${searchData.regreso}\nPersonas: ${searchData.personas}\n\n¡Redirigiendo a resultados!`);
+
+        button.textContent = originalText;
+        button.disabled = false;
+    }, 2000);
+}
